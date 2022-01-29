@@ -1,17 +1,12 @@
 {% extends "base.html" %}
 
-{% block header %}
-    
-{% endblock %}
            
 {% block content %}
-           
-  <body>
-    {% for pet in pets %}
-        {{ pet.name }}<br>
-        {{ pet.description }}<br>
-        {{ pet.image }}<br>
-    {% endfor %}
-  </body>
+<header id="hero">
+    <div class="content">
+        <h2>Find your new work companion</h2>
+        <p>Connecting awesome people with a happy furry friend</p>
+    </div>
+</header>
 
 {% endblock %}

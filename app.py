@@ -92,6 +92,30 @@ def signup():
     return render_template("signup.html")
 
 
+@app.route("/providers")
+def providers():
+    providers = mongo.db.service_providers.find()
+    return render_template("providers.html", providers=providers)
+
+
+@app.route("/provider_details/<provider_name>")
+def provider_details(provider_name):
+    provider = mongo.db.service_providers.find_one({"name": provider_name})
+    return render_template("provider_details.html", provider=provider)
+
+
+@app.route("/provider_pets/<provider_name>")
+def provider_pets(provider_name):
+    pets = list(mongo.db.pets.find({"provider": provider_name}))
+    return render_template("provider_pets.html", pets=pets)
+
+
+@app.route("/pet_profile/<pet_name>")
+def pet_profile(pet_name):
+    pet = mongo.db.pets.find_one({"name": pet_name})
+    return render_template("pet_profile.html", pet=pet)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
             port=int(os.environ.get("PORT")),
