@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 
-<header id="header-index">
-{% block content %}
+{% block header %}
     
 {% endblock %}
-</header>
+           
+{% block content %}
+           
+  <body>
+    {% for pet in pets %}
+        {{ pet.name }}<br>
+        {{ pet.description }}<br>
+        {{ pet.image }}<br>
+    {% endfor %}
+  </body>
+
+{% endblock %}
