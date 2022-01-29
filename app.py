@@ -4,6 +4,8 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
+
 if os.path.exists("env.py"):
     import env
 
@@ -38,7 +40,7 @@ def login():
             ):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome {}".format(request.form.get("username")))
-                return redirect(url_for("profile", username=session["user"]))
+                return redirect(url_for("home", username=session["user"]))
             else:
                 # Invalid password match
                 flash("Invalid Username and/or Password")
@@ -50,6 +52,15 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    """------------- Log out -----------------------"""
+    # remove user session cookies
+    flash("You Have Been Logged Out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -66,6 +77,9 @@ def signup():
             return redirect(url_for("signup"))
 
         register = {
+            "fname": request.form.get("fname").lower(),
+            "lname": request.form.get("lname").lower(),
+            "email": request.form.get("email").lower(),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
         }
@@ -74,7 +88,7 @@ def signup():
         # put the new user in a session cookie
         session["user"] = request.form.get("username").lower()
         flash("Sign Up Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("home", username=session["user"]))
     return render_template("signup.html")
 
 

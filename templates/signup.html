@@ -19,11 +19,33 @@
 
             <form action="{{ url_for('signup') }}" method="POST" id="signup-form" class="signup-form email-form">
                 
-                <!-- Username field -->
+                
                 <div class="row">
+                    <!-- First Name -->
+                    <div class="col-md-12 form-group mt-3 mt-md-0">
+                        <input type="text" class="form-control" name="fname" id="fname" 
+                        minlength="5" maxlength="20" placeholder="First Name" pattern="^[a-zA-Z0-9]{5,20}$" required>
+                        <div class="invalid-feedback">First Name field cannot be blank</div>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="col-md-12 form-group mt-3 mt-md-0">
+                        <input type="text" class="form-control" name="lname" id="lname" 
+                        minlength="5" maxlength="20" placeholder="Last Name" pattern="^[a-zA-Z0-9]{5,20}$" required>
+                        <div class="invalid-feedback">Last Name field cannot be blank</div>
+                    </div>
+
+                    <!-- Username -->
                     <div class="col-md-12 form-group mt-3 mt-md-0">
                         <input type="text" class="form-control" name="username" id="username" 
                         minlength="5" maxlength="20" placeholder="Username" pattern="^[a-zA-Z0-9]{5,20}$" required>
+                        <div class="invalid-feedback">Username cannot be blank or contain spaces</div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-12 form-group mt-3 mt-md-0">
+                        <input type="email" class="form-control" name="email" id="email" 
+                        placeholder="Email" required>
                         <div class="invalid-feedback">Username cannot be blank or contain spaces</div>
                     </div>
 
@@ -34,9 +56,7 @@
                         <div class="invalid-feedback">Password cannot be blank or contain spaces</div>
                     </div>
                 </div>
-                <div class="form-messages">
-
-                </div>
+                <div class="form-messages"></div>
 
                 <div class="text-center"><button type="submit">Sign Me Up</button></div>
             </form>
