@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 
 {% block header %}
-    
+
 {% endblock %}
-           
+
 {% block content %}
-           
-  <body>
-    {% for pet in pets %}
-        {{ pet.name }}<br>
-        {{ pet.description }}<br>
-        {{ pet.image }}<br>
-    {% endfor %}
-  </body>
+
+<body>
+  <img src="assets/images/cat.jpg" class="img-fluid" alt="Responsive image">
+  {% for pet in pets %}
+  {{ pet.name }}<br>
+  {{ pet.description }}<br>
+  {{ pet.image }}<br>
+  {% endfor %}
+
+</body>
 
 {% endblock %}
