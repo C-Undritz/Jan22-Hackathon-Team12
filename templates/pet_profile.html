@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block header %}
+    
+{% endblock %}
+           
+{% block content %}
+
+  <body>
+    <h2>This is the pet profile:</h2>
+    <div class="card" style="width: 18rem;">
+        <img src="{{ pet.image }}" class="card-img-top" alt="Picture of the pet">
+        <div class="card-body">
+        <h5 class="card-title">{{ pet.name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ pet.description}}</h6>
+        <a href="{{ url_for('provider_details', provider_name=pet.provider) }}" class="card-link">Provider</a>
+        </div>
+    </div>
+  </body>
+
+{% endblock %}
