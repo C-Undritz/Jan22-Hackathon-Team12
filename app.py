@@ -54,6 +54,36 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/provider_login", methods=["GET", "POST"])
+def provider_login():
+    """------------- Log in -----------------------"""
+    if request.method == "POST":
+        # check if the username already exists in the database
+        existing_user = mongo.db.service_providers.find_one(
+            {"name": request.form.get("name").lower()}
+        )
+
+        if existing_user:
+            # check to see if hashed password matches user input
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")
+            ):
+                session["user"] = request.form.get("name").lower()
+                flash("Welcome {}".format(request.form.get("name")))
+                return redirect(url_for("home", username=session["user"]))
+            else:
+                # Invalid password match
+                flash("Invalid Username and/or Password")
+                return redirect(url_for("provider_login"))
+
+        else:
+            # Username does not exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("provider_login"))
+
+    return render_template("provider_login.html")
+
+
 @app.route("/logout")
 def logout():
     """------------- Log out -----------------------"""
@@ -71,9 +101,15 @@ def signup():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()}
         )
+        existing_email = mongo.db.users.find_one(
+            {"email": request.form.get("email").lower()}
+        )
 
         if existing_user:
             flash("Username already exists")
+            return redirect(url_for("signup"))
+        if existing_email:
+            flash("Email already exists")
             return redirect(url_for("signup"))
 
         register = {
@@ -82,6 +118,7 @@ def signup():
             "email": request.form.get("email").lower(),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
+            "provider": False
         }
         mongo.db.users.insert_one(register)
 
@@ -89,7 +126,51 @@ def signup():
         session["user"] = request.form.get("username").lower()
         flash("Sign Up Successful!")
         return redirect(url_for("home", username=session["user"]))
+
     return render_template("signup.html")
+
+
+@app.route("/provider_signup", methods=["GET", "POST"])
+def provider_signup():
+    """------------- Provider Sign Up -----------------------"""
+    if request.method == "POST":
+        # Check if the username already exists
+        existing_provider = mongo.db.service_providers.find_one(
+            {"name": request.form.get("name").lower()}
+        )
+        existing_email = mongo.db.service_providers.find_one(
+            {"email": request.form.get("email").lower()}
+        )
+
+        if existing_provider:
+            flash("Provider already exists")
+            return redirect(url_for("signup"))
+        if existing_email:
+            flash("Email already exists")
+            return redirect(url_for("signup"))
+
+        register = {
+            "name": request.form.get("name").lower(),
+            "address1": request.form.get("address1").lower(),
+            "address2": request.form.get("address2").lower(),
+            "address3": request.form.get("address3").lower(),
+            "town_city": request.form.get("town_city").lower(),
+            "county": request.form.get("county").lower(),
+            "postcode": request.form.get("postcode").lower(),
+            "phone": request.form.get("phone").lower(),
+            "email": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password")),
+            "description": request.form.get("description").lower(),
+            "provider": True
+        }
+        mongo.db.service_providers.insert_one(register)
+
+        # put the new user in a session cookie
+        session["user"] = request.form.get("name").lower()
+        flash("Sign Up Successful!")
+        return redirect(url_for("home", username=session["user"]))
+        
+    return render_template("provider_signup.html")
 
 
 @app.route("/providers")
