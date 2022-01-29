@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ | Login
+{% endblock %}
+
+{% block content %}
+<section id="login" class="login">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Log In</h2>
+        </div>
+    </div>
+
+    <div class="container" data-aos="fade-up">
+
+        <div class="col-lg-12 mt-0 mt-lg-0">
+
+            <form action="{{ url_for('login') }}" method="POST" id="login-form" class="signup-form email-form">
+                
+                <!-- Username field -->
+                <div class="row">
+                    <div class="col-md-12 form-group mt-3 mt-md-0">
+                        <input type="text" class="form-control" name="username" id="username" 
+                        minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" placeholder="Username" required>
+                        <div class="invalid-feedback">Username cannot be blank or contain spaces</div>
+                    </div>
+
+                    <!-- Password field -->
+                    <div class="col-md-12 form-group">
+                        <input type="password" name="password" class="form-control" id="password"
+                        minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" placeholder="Password" required>
+                        <div class="invalid-feedback">Password cannot be blank or contain spaces</div>
+                    </div>
+                </div>
+
+                <div class="text-center"><button type="submit">Log In</button></div>
+            </form>
+
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <p class="text-center">
+                    Not Registered? <a href="{{ url_for('signup') }}">Sign Up Here</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}
