@@ -1,70 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
+    <title>Life Paws</title>
+    <meta name="description" content="Hiring pets in work place">
+    <meta name="keywords" content="Cats, dogs, pets, animals, mental health, wellbeing, work buddy, friend">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Paws {% block title %}{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,500,700" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <!-- Default CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/default.css') }}">
+
+    <!-- Color CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/color.css') }}">
+
+    <!-- Font CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fonts.css') }}">
+
+    <!-- Button CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/buttons.css') }}">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
 
-    <!-- Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{{ url_for('home') }}"><strong>Life Paws</strong></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Service Providers</a>
-              </li>
-              {% if session.user %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
-                </li>
-              {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('login') }}">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('signup') }}">SignUp</a>
-                </li>
-              {% endif %}
-              
-            </ul>
-          </div>
-        </div>
-      </nav>
-    <!-- End Navbar-->
+<body class="text-black base-font-size">
 
-    
-    {% block content %}
-    {% endblock %}
-
-    <!-- Footer -->
-    <div class="container">
-        <footer class="py-3 my-4">
-          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Facebook</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Service Providers</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Whatever</a></li>
-          </ul>
-          <p class="text-center text-muted">© Copyright 2022 Life Paws</p>
+    <div class="wrapper mx-auto h-100">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-inner">
+                <nav class="navbar navbar-expand-lg py-1">
+                    <div class="container-fluid">
+                        <a class="navbar-brand logo md-font-size font-family-secondary text-dark-gray m-0" href="/">
+                            <i class="fas fa-paw"></i> Life Paws
+                        </a>
+                        <button class="navbar-toggler base-plus-font-size" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="text-black fas fa-bars xl-font-size"></span>
+                        </button>
+                        <div class="collapse navbar-collapse mt-3 mt-lg-0 sm-font-size" id="main-menu">
+                            <ul class="navbar-nav ml-auto pb-2">
+                                <li class="nav-item ml-lg-3">
+                                    <a href="services.html" class="nav-link text-dark-gray font-family-secondary font-weight__700">
+                                            Service Providers
+                                        </a>
+                                </li>
+                                <li class="nav-item ml-lg-3">
+                                    <a href="#" class="nav-link text-dark-gray font-family-secondary font-weight__700">
+                                            Login
+                                        </a>
+                                </li>
+                                <li class="nav-item ml-lg-3">
+                                    <a href="#" class="nav-link text-dark-gray font-family-secondary font-weight__700">
+                                            Signup
+                                        </a>
+                                </li>
+                                <li class="nav-item ml-lg-3">
+                                    <a href="#" class="nav-link text-dark-gray font-family-secondary font-weight__700">
+                                            Logout
+                                        </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- End Header -->
+        
+        <!-- Hero -->
+        
+            {% block content %}
+            {% endblock %}
+        
+        <!-- End Hero -->
+        
+        
+        
+        <!-- Footer -->
+        <footer class="footer py-4 bg-white">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <div class="row">
+                            
+                            <div class="col-12 mx-auto col-lg-12">
+                                <div class="row">
+                                    <ul class="nav col flex-column sm-font-size">
+                                        <li class="nav-link nav-head text-uppercase font-weight__500 text-black base-font-size font-family-secondary">Motaz Abdou</li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Slack</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Github</a></li>
+                                    </ul>
+                                    <ul class="nav col flex-column sm-font-size">
+                                        <li class="nav-link nav-head text-uppercase font-weight__500 text-black base-font-size font-family-secondary">Cian O'Conor</li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Help</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">FAQ</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Contact</a></li>
+                                    </ul>
+                                    <ul class="nav col flex-column sm-font-size">
+                                        <li class="nav-link nav-head text-uppercase font-weight__500 text-black base-font-size font-family-secondary">Emma Charles Wilson</li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Terms</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Privacy</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Policy</a></li>
+                                    </ul>
+                                    <ul class="nav col flex-column sm-font-size">
+                                        <li class="nav-link nav-head text-uppercase font-weight__500 text-black base-font-size font-family-secondary">Legal</li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Terms</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Privacy</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Policy</a></li>
+                                    </ul>
+                                    <ul class="nav col flex-column sm-font-size">
+                                        <li class="nav-link nav-head text-uppercase font-weight__500 text-black base-font-size font-family-secondary">Legal</li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Terms</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Privacy</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray">Policy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Empty Space -->
+                        <div class="sm-space"></div>
+                        <!--/ End Empty Space -->
+                        <div class="border-top border-color-light-gray"></div>
+                        <!-- Empty Space -->
+                        <div class="sm-space"></div>
+                        <!--/ End Empty Space -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="copyright xs-font-size text-center text-gray">
+                                    © 2022. All Rights Reserved. Code Institute Hackathon - Team 12
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
-      </div>
-    <!-- End Footer -->
-    
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!--/ End Footer -->
+    </div>
+
+    <!-- jQuery Script -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <!-- Popper Script -->
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+
+    <!-- Bootstrap Script -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+    <!-- Main Script -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
+
 </html>
