@@ -294,13 +294,13 @@ def add_pet():
 
 @app.route("/providers")
 def providers():
-    providers = mongo.db.service_providers.find()
+    providers = mongo.db.users.find()
     return render_template("providers.html", providers=providers)
 
 
 @app.route("/provider_details/<provider_name>")
 def provider_details(provider_name):
-    provider = mongo.db.service_providers.find_one({"name": provider_name})
+    provider = mongo.db.users.find_one({"provider_name": provider_name})
     return render_template("provider_details.html", provider=provider)
 
 
