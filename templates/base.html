@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Life Paws</title>
+    <title>Life Paws {% block title %}{% endblock %}</title>
     <meta name="description" content="Hiring pets in work place">
     <meta name="keywords" content="Cats, dogs, pets, animals, mental health, wellbeing, work buddy, friend">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,7 +43,7 @@
                 <!-- Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Life Paws</a>
+          <a class="navbar-brand" href="{{ url_for('home') }}"><i class="fas fa-paw"></i> Life Paws</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
