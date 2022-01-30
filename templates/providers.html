@@ -1,3 +1,31 @@
+
+{%  extends 'base.html' %}
+
+{% block title %}
+ | Service Providers
+{% endblock %}
+
+{% block content %}
+<!-- Section -->
+<section class="providers position-relative jumbotron jumbotron-fluid bg-white py-3 mb-0">
+    <div class="container providers-inner">
+        <div class="row no-gutters align-items-center">
+            <h1 class="heading text-center mt-3 mb-4">Our Service Providers</h1>
+            <div class="col mb-5">
+                <div class="card h-100 shadow-sm"> <img src="{{ url_for('static', filename='img/shelter.jpg') }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <div class="clearfix mb-3 text-center"> Shelter Name </div>
+                        <h5 class="card-title text-center">Lorem, ipsum </h5>
+                        <div class="text-center my-4"> <a href="#" class="btn btn-warning">See Pets</a> </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+    
+</section>
+<!--/ End section -->
+
 {% extends "base.html" %}
 
 {% block header %}
