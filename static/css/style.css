@@ -84,7 +84,7 @@ h6,
   z-index: 3;
 }
 .hero-bg {
-  background-image: url(../images/hero-bg.png);
+  background-image: url('../img/hero-bg.png');
   background-size: 135%
 }
 

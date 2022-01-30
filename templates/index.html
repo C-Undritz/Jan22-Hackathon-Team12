@@ -2,11 +2,86 @@
 
            
 {% block content %}
-<header id="hero">
-    <div class="content">
-        <h2>Find your new work companion</h2>
-        <p>Connecting awesome people with a happy furry friend</p>
+<!-- Hero -->
+<section class="hero position-relative jumbotron jumbotron-fluid bg-white py-3 mb-0">
+    <div class="container hero-inner">
+        <div class="row no-gutters align-items-center">
+            <div class="col-12 col-lg-5 ml-lg-auto order-lg-2">
+                <div class="text-center hero-bg section-bg">
+                    <img src="{{ url_for('static', filename='img/kitten.png') }}" class="img-fluid hero-img" alt="Hero Image">
+                </div>
+                <!-- Empty Space -->
+                <div class="md-space d-block d-lg-none"></div>
+                <!--/ End Empty Space -->
+            </div>
+            <div class="col-12 col-lg-7 mr-lg-auto">
+                <div class="row align-items">
+                    <div class="col-12">
+                        <div class="text-center text-lg-left">
+                            <h1 class="xxxl-font-size font-weight__700 hero-heading">
+                                Find your new work companion
+                            </h1>
+                            <p class="text-dark-gray base-plus-font-size">
+                                Connecting awesome people with a happy furry friend
+                            </p>
+                        </div>
+                        <!-- Empty Space -->
+                        <div class="md-space"></div>
+                        <!--/ End Empty Space -->
+                        <div class="row no-gutters">
+                            <div class="col-10 col-md-10 mx-auto mr-lg-auto ml-lg-0">
+                                <div class="store-btn">
+                                    <a href="#" role="button">
+                                        <button type="button" class="btn btn-lg btn-primary">Providers</button>
+                                    </a>
+                                    <a href="#" role="button">
+                                        <button type="button" class="btn btn-lg btn-primary">Pets</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Empty Space -->
+                <div class="md-space d-block d-lg-none"></div>
+                <!--/ End Empty Space -->
+            </div>
+        </div>
     </div>
-</header>
+    <svg xmlns="http://www.w3.org/2000/svg" class="hero-curve-bottom" viewBox="0 0 1440 68" enable-background="new 0 0 1440 68">
+        <path d="m1622.3 1937.7c0 0-410.7 169.1-913.4 75.5-502.7-93.6-977.7 56.3-977.7 56.3v440h1891.1v-571.8" transform="translate(0-1977)" fill="#f3f5f6"></path>
+    </svg>
+</section>
+<!--/ End Hero -->
+<!-- As Seen On -->
+<section class="as-seen-on section bg-light-gray position-relative">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-12 col-lg-12 mx-auto mb-4">
+
+                <h1 class="mb-4 heading text-center"><strong>How can a pet help my mental health?</strong></h1>
+                <p class="home-content">
+                    Caring for a pet can help our mental health in many ways, including:
+
+                <br><br>Increasing your physical activity. Dog owners are likely to take their pet out every day for a walk or run. This can be a fun way to fit exercise into your routine
+                
+                <br><br>Providing companionship. Pets can give you a sense of security and someone to share the day with. Caring for them can help you feel wanted and needed. This can be especially valuable for older people or those who live alone
+                reducing anxiety. The companionship of a pet can help to ease your anxiety
+                
+                <br><br>Boosting self-confidence. Pets can be great listeners, offer unconditional love and won’t criticise you. This can help your self-confidence, especially if you feel isolated or misunderstood
+                
+                <br><br>Helping you meet new people. Dog owners often stop and chat to each other on walks. But other pets can be a way to meet people too: in pet shops, training classes or online groups, for example
+                
+                <br><br>Adding structure to your day. Having to feed, exercise and care for a pet can help you keep to a daily routine, which can help you feel more grounded and focused. It can give your day purpose and a sense of achievement.
+                Pets may also help with specific conditions. For example, people with ADHD may benefit from the structure and routine that a pet needs. Managing their pet’s responsibilities and keeping track of time – to feed or walk them on time, for example – may help them in other areas of their lives. Some people with ADHD are hyperactive – especially children - and playing with a pet can be a great way to release excess energy, whether that’s walking a dog or running around with a kitten.
+
+                <br><br>Autistic people can benefit from having a pet. Pets provide the kind of unconditional relationship that can help someone build social skills and confidence. They can provide a sense of calm and reassurance if their owner feels overwhelmed. Autistic children with sensory issues can involve their pet in sensory integration activities to help them get used to how something feels against their skin or how it smells or sounds.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    
+</section>
 
 {% endblock %}
