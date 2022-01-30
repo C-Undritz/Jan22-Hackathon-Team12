@@ -43,7 +43,7 @@
                     <a type="button" href="{{ url_for('provider_profile') }}" class="btn btn-primary">Provider Profile</a>
                 </div>
                 <div class="mx-1">
-                    <a type="button" href="{{ url_for('provider_pets', provider_name=user.provider_name) }}" class="btn btn-primary">Your Pets</a>
+                    <a type="button" href="{{ url_for('provider_view_pets', provider_name=user.provider_name) }}" class="btn btn-primary">Your Pets</a>
                 </div>
                 <div class="mx-1">
                     <a type="button" href="{{ url_for('add_pet') }}" class="btn btn-primary">Add a Pet</a>

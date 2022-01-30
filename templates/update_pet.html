@@ -1,44 +1,36 @@
 {% extends 'base.html' %}
 
 {% block title %}
- | Add Pet
+ | Update Pet
 {% endblock %}
 
 {% block content %}
 <section id="signup" class="signup">
     <div class="container" data-aos="fade-up">
-
         <div class="section-title">
-            <h2>Add a pet</h2>
+            <h2>Update pet</h2>
         </div>
     </div>
-
     <div class="container" data-aos="fade-up">
-
         <div class="col-lg-12 mt-0 mt-lg-0">
-
-            <form action="{{ url_for('add_pet') }}" method="POST" id="add-pet-form" class="">
-                
+            <form action="{{ url_for('update_pet', pet_id=pet.id, provider_name=pet.provider) }}" method="POST" id="update-pet-form" class="">
                 <div class="row">
                     <!-- Pet Name -->
                     <div class="col-md-12 form-group mt-1">
                         <input type="text" class="form-control" name="name" id="name" 
-                        minlength="3" maxlength="50" placeholder="The pets's name" required>
+                        minlength="3" maxlength="50" value="{{ pet.name|capitalize }}" required>
                     </div>
-
                     <!-- Description field -->
                     <div class="col-md-12 form-group mt-4">
                         <label for="description">Tell us about the pet (5 to 500 characters)</label>
                         <textarea id="description" style="width:100%;height:150px;" name="description" minlength="5" 
-                        maxlength="500"></textarea>
+                        maxlength="500">{{ pet.description|capitalize }}</textarea>
                     </div>
-
                     <!-- Image -->
                     <div class="col-md-12 form-group mt-1">
                         <input type="text" class="form-control" name="image" id="image" 
-                        minlength="2" maxlength="1000" placeholder="Add image URL here" required>
+                        minlength="2" maxlength="1000" value="{{ pet.image }}" required>
                     </div>
-                    
                 </div>
                 <div class="mt-4 d-flex flex-row">
                     <div class="me-1">
@@ -49,16 +41,7 @@
                     </div>
                 </div>
             </form>
-
         </div>
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <p class="text-center">
-                    Already Registered? <a href="{{ url_for('login') }}">Log In Here</a>
-                </p>
-            </div>
-        </div>
-
     </div>
 </section>
 {% endblock %}
