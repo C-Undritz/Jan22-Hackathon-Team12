@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Lato&display=swap');
 
 .img-fluid {
     min-width: 100%;
@@ -7,21 +7,26 @@
 
 .container {
     position: relative;
+    text-align: center;
+    color: white;
 }
 
-.text-block {
+body {
+    background: url('../media/cat.jpg');
+}
+
+.centered-main {
     position: absolute;
-    bottom: 650px;
-    color: rgb(255, 136, 0);
-    padding-left: 20px;
-    padding-right: 100px;
-    margin-bottom: -400px;
-    margin-left: 950px;
-    font-size: 110%;
+    top: 28%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    font-size: 250%;
 }
 
-h3 {
-    color: rgb(255, 136, 0);
-    font-size: 300%;
-    font-family: "Fredoka+One", sans-serif;
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    font-size: 150%;
 }

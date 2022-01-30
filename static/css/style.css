@@ -1,3 +1,149 @@
+/* -------------------------------------------------- Emma's Code */
+
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Lato&display=swap');
+
+.img-fluid {
+    min-width: 100%;
+    height: auto;
+}
+
+body {
+    background-color: #054a91;
+}
+
+.col-12 {
+    font-family: "Lato", sans-serif;
+    float: right;
+    text-align: left;
+    color: #F17300;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    width: 20%;
+    margin-right: 120px;
+    margin-top: -1400px;
+    margin-left: -100px;
+}
+
+.col-12 h2 {
+    font-family: "Chewy", sans-serif;
+    font-size: 270%;
+    margin-bottom: 40px;
+}
+
+.col-12 h3 {
+    font-size: 150%;
+}
+
+.centered-main {
+    position: absolute;
+    top: 28%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    font-size: 250%;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    font-size: 150%;
+}
+
+.body {
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
+    margin-top: 30px;
+    width: 150px;
+    height: 45px;
+}
+
+
+/*--------------------------------------------- NavBar */
+
+.navbar {
+    padding: 30px;
+    color: #FFFDF6;
+    font-family: "Chewy", sans-serif;
+    font-size: 150%;
+}
+
+.navbar-brand {
+    font-size: 200%;
+    color: #054a91;
+}
+
+.navbar-light .navbar-brand {
+    color: #054a91;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: #3E7CB1;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #054a91;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #3E7CB1;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #054a91;
+}
+
+.navbar-light .navbar-nav .nav-link.active:hover {
+    color: #3E7CB1;
+}
+
+.text-muted {
+    font-family: "Lato", sans-serif;
+    color: #FFFDF6 !important;
+}
+
+/* ---------------------------------------------------------------- Media Queries */
+
+@media screen and (max-width: 810px) {
+    .col-12 {
+        width: 80%;
+        margin-top: 10px;
+    }
+
+    .col-12 h2 {
+        font-size: 150%;
+        width: 100%;
+    }
+
+    .col-12 h3 {
+        font-size: 110%;
+    }
+
+}
+
+@media screen and (max-width: 390px) {
+    .col-12 {
+        width: 90%;
+        margin-left: -60px;
+    }
+
+    .col-12 h2 {
+        font-size: 150%;
+    }
+
+    .col-12 h3 {
+        font-size: 110%;
+    }
+}
+
+
+
+
+/* ---------------------------------------------------------------- Close */
+
 * {
     padding: 0;
     margin: 0;

@@ -7,13 +7,32 @@
 {% block content %}
 
 <body>
-  <img src="assets/images/cat.jpg" class="img-fluid" alt="Responsive image">
-  {% for pet in pets %}
-  {{ pet.name }}<br>
+  <div class="row">
+    <img src="static/media/cat.jpg" style="width: 100%;">
+    <div class="container">
+      <div class="col-12">
+        <h2>About Us</h2>
+        <h3> What do we brand? Anything and everything, regardless of incomprehensibility!
+          Without
+          sufficient initiatives, methodologies are forced to become real-world. Think dot-com. Think
+          impactful.
+          Think
+          proactive. But don't think all three at the same time. The metrics for e-commerce are more
+          well-understood
+          if they are not ubiquitous. We apply the proverb "Never look a gift horse in the mouth" not only
+          to
+          our
+          infomediaries but our capability to upgrade.</h3>
+        <button type="button" class="btn btn-warning">Sign Up</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  {% for pet in pets %} {{ pet.name }}<br>
   {{ pet.description }}<br>
   {{ pet.image }}<br>
   {% endfor %}
-
+  </div>
 </body>
 
 {% endblock %}
