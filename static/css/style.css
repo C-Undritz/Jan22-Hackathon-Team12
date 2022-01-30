@@ -186,3 +186,7 @@ h6,
   box-shadow: inset 2px 2px 8px rgb(55 94 148 / 30%), inset -3px -2px 5px rgb(255 255 255 / 80%);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+body > div.wrapper.mx-auto.h-100 > section > div > div > div.col-lg-6.order-1.order-lg-2 > div > img {
+  border-radius: 20px;
+} 

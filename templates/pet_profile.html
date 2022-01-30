@@ -6,16 +6,24 @@
            
 {% block content %}
 
-  <body>
-    <h2>This is the pet profile:</h2>
-    <div class="card" style="width: 18rem;">
-        <img src="{{ pet.image }}" class="card-img-top" alt="Picture of the pet">
-        <div class="card-body">
-        <h5 class="card-title">{{ pet.name }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ pet.description}}</h6>
-        <a href="{{ url_for('provider_details', provider_name=pet.provider) }}" class="card-link">Provider</a>
-        </div>
+  <section class="hero position-relative jumbotron jumbotron-fluid bg-white py-3 mb-0">
+    <div class="container">
+      <h1 class="text-center heading mt-3 mb-3">Pet Details</h1>
+      <div class="row providers-container mb-5 mx-auto">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+          <div class="about-img my-auto">
+              <img src="{{ pet.image }}" class="img-fluid" alt="">
+          </div>
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content my-auto">
+          <h2 class="heading">{{ pet.name }}</h2>
+          <p>
+            {{ pet.description }}
+          </p>
+          <a href="{{ url_for('provider_details', provider_name=pet.provider) }}" class="btn btn-primary mx-auto mt-2">Back to Provider</a>
+      </div>
+      </div>
     </div>
-  </body>
+  </section>
 
 {% endblock %}
