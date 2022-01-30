@@ -100,9 +100,19 @@ body {
     color: #3E7CB1;
 }
 
+.fas {
+    color: #054a91;
+}
+
+/* ---------------------------------------------------------------- Footer */
+
 .text-muted {
     font-family: "Lato", sans-serif;
     color: #FFFDF6 !important;
+}
+
+.fas .fa-paw {
+    color: red;
 }
 
 /* ---------------------------------------------------------------- Media Queries */
@@ -120,7 +130,7 @@ body {
     }
 
     .col-12 h2 {
-        font-size: 150%;
+        font-size: 110%;
         width: 100%;
     }
 
@@ -128,12 +138,18 @@ body {
         font-size: 110%;
     }
 
+    .fas {
+        margin-left: -370px;
+    }
+
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 590px) {
     .col-12 {
         width: 90%;
-        margin-left: -60px;
+        margin-right: -1px;
+        padding-right: 10px;
+
     }
 
     .col-12 h2 {
@@ -142,6 +158,10 @@ body {
 
     .col-12 h3 {
         font-size: 110%;
+    }
+
+    .fas {
+        margin-right: -300px;
     }
 }
 
