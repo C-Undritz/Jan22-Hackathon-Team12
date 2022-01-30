@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block header %}
+    
+{% endblock %}
+           
+{% block content %}
+
+  <body>
+    <h2>These are the selected provider details:</h2>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+        <h5 class="card-title">{{ provider.provider_name }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ provider.description}}</h6>
+        <p class="card-text">{{ provider.address1 }}</p>
+        <p class="card-text">{{ provider.address2 }}</p>
+        {% if provider.address3 %}
+            <p class="card-text">{{ provider.address3 }}</p>
+        {% endif %}
+        <p class="card-text">{{ provider.town_city }}</p>
+        <p class="card-text">{{ provider.county }}</p>
+        <p class="card-text">{{ provider.postcode}}</p>
+        <br>
+        <p class="card-text">{{ provider.phone}}</p>
+        <p class="card-text">{{ provider.business_email }}</p>
+        <a href="{{ url_for('provider_pets', provider_name=provider.provider_name) }}" class="card-link">Pets</a>
+        </div>
+    </div>
+  </body>
+
+{% endblock %}

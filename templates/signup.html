@@ -22,38 +22,96 @@
                 
                 <div class="row">
                     <!-- First Name -->
-                    <div class="col-md-12 form-group mt-3 mt-md-0">
+                    <div class="col-md-12 form-group mt-1">
                         <input type="text" class="form-control" name="fname" id="fname" 
-                        minlength="5" maxlength="20" placeholder="First Name" pattern="^[a-zA-Z0-9]{5,20}$" required>
-                        <div class="invalid-feedback">First Name field cannot be blank</div>
+                        minlength="3" maxlength="20" placeholder="First Name" required>
                     </div>
 
                     <!-- Last Name -->
-                    <div class="col-md-12 form-group mt-3 mt-md-0">
+                    <div class="col-md-12 form-group mt-1">
                         <input type="text" class="form-control" name="lname" id="lname" 
-                        minlength="5" maxlength="20" placeholder="Last Name" pattern="^[a-zA-Z0-9]{5,20}$" required>
-                        <div class="invalid-feedback">Last Name field cannot be blank</div>
+                        minlength="3" maxlength="20" placeholder="Last Name" pattern="^[a-zA-Z0-9]{5,20}$" required>
                     </div>
 
                     <!-- Username -->
-                    <div class="col-md-12 form-group mt-3 mt-md-0">
+                    <div class="col-md-12 form-group mt-1">
                         <input type="text" class="form-control" name="username" id="username" 
                         minlength="5" maxlength="20" placeholder="Username" pattern="^[a-zA-Z0-9]{5,20}$" required>
-                        <div class="invalid-feedback">Username cannot be blank or contain spaces</div>
                     </div>
 
                     <!-- Email -->
-                    <div class="col-md-12 form-group mt-3 mt-md-0">
+                    <div class="col-md-12 form-group mt-1">
                         <input type="email" class="form-control" name="email" id="email" 
                         placeholder="Email" required>
-                        <div class="invalid-feedback">Username cannot be blank or contain spaces</div>
                     </div>
 
                     <!-- Password field -->
-                    <div class="col-md-12 form-group">
+                    <div class="col-md-12 form-group mt-1">
                         <input type="password" name="password" class="form-control" id="password"
-                        minlength="5" maxlength="20" placeholder="Password" pattern="^[a-zA-Z0-9]{5,20}$" required>
-                        <div class="invalid-feedback">Password cannot be blank or contain spaces</div>
+                        minlength="5" maxlength="20" placeholder="Password" pattern="^[a-zA-Z0-9]{5,20}$">
+                    </div>
+
+                    <h5 class="mt-4">Become a provider!</h5>
+                    <h6>If you would like to also be a provider on this platform, in addition to the above, please fill out the below</h6>
+                    <!-- Provider Name -->
+                    <div class="col-md-12 form-group mt-3 mt-md-0">
+                        <input type="text" class="form-control" name="provider_name" id="provider_name" 
+                        minlength="3" maxlength="50" placeholder="Provider Name">
+                    </div>
+
+                    <p class="mb-0 mt-2">Your Address:</p>
+                    <!-- Provider address1 -->
+                    <div class="col-md-12 form-group">
+                        <input type="text" class="form-control" name="address1" id="address1" 
+                        minlength="3" maxlength="50" placeholder="Your street and number">
+                    </div>
+
+                    <!-- Provider address2 -->
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="address2" id="address2" 
+                        minlength="3" maxlength="50">
+                    </div>
+
+                    <!-- Provider address3 -->
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="address3" id="address3" 
+                        minlength="3" maxlength="50">
+                    </div>
+
+                    <!-- Town/City -->
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="town_city" id="town_city" 
+                        minlength="2" maxlength="50" placeholder="Town or City">
+                    </div>
+
+                    <!-- County-->
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="county" id="county" 
+                        minlength="3" maxlength="50" placeholder="County">
+                    </div>
+
+                    <!-- Postcode -->
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="postcode" id="postcode" 
+                        minlength="5" maxlength="20" placeholder="Postcode">
+                    </div>
+
+                    <!-- Contact number -->
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="phone" id="phone" 
+                        minlength="5" maxlength="20" placeholder="Phone number">
+                    </div>
+
+                    <!-- Business Email -->
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="email" class="form-control" name="business_email" id="business_email" placeholder="Business Email">
+                    </div>
+
+                    <!-- description field -->
+                    <div class="col-md-12 form-group mt-4">
+                        <label for="description">Tell us about yourself and what you can offer (5 to 500 characters)</label>
+                        <textarea id="description" style="width:100%;height:150px;" name="description" minlength="5" 
+                        maxlength="500"></textarea>
                     </div>
                 </div>
                 <div class="form-messages"></div>

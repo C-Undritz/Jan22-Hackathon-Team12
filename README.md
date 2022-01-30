@@ -6,10 +6,13 @@
 
 ---
 
- **<img src="assets/images/"> Bloody Cats <img src="assets/images/">**
+ **<img src="assets/images/"> Life Paws <img src="assets/images/">**
 
 By: Cian, ChrisU, ChrisT, Emma, Motaz,<br>January 2022<br>
 This Project is an Team Event Project organized by [Code Institute](https://www.codeinstitute.net/).
+
+## **Live site** ##
+ - [www.LifePaws.com](https://lifepaws.herokuapp.com/)
 
 ---
 ## **Contents** ##
@@ -119,7 +122,7 @@ The background image....
 ​
 We used Baslsamic Wireframe
 
-[View the wireframes here.](wireframes)
+ - [View the wireframes here.](wireframes)
 
 [Back to contents](#contents)
 
@@ -189,10 +192,12 @@ We used Baslsamic Wireframe
   
 - **Additional Site features:**
   - A friendly HTTP 404 and 500 Error landing page for site visitors to see if a requested page is unavailable or cannot be accessed.
-    - The page provides a button to click to return the visitor to the homepage.
+    - The page provides a button to click to return the     visitor to the homepage.
+- This is what the user sees if a page is not found. 
 ​
-      ![404 Error](assets/images/404-error.png)
-      ![500 Error](assets/images/500-error.png)
+      ![404 Error](templates/assets/images/404-error.png)
+- This is what the user sees if the server is down. 
+      ![500 Error](templates/assets/images/500-error.png)
 ​
 ​
 ### **Future Features** ###

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section id="profile" class="profile">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <h2>Your registered provider details</h2>
+        </div>
+    </div>
+
+    <div class="container" data-aos="fade-up">
+
+        <div class="col-lg-12 mt-0 mt-lg-0">
+
+            <form action="{{ url_for('provider_profile') }}" method="POST" id="profile-form" class="">
+                <div class="row">
+                    <div class="col-md-12 form-group mt-1">
+                        <label for="fname">Provider Name</label>
+                        <input type="text" class="form-control" name="provider_name" id="provider_name" value="{{ user.provider_name|capitalize }}" required>
+                    </div>
+                    <p class="mb-0 mt-2">Your Address:</p>
+                    <div class="col-md-12 form-group">
+                        <input type="text" class="form-control" name="address1" id="address1" value="{{ user.address1|capitalize }}" required>
+                    </div>
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="address2" id="address2" value="{{ user.address2|capitalize }}">
+                    </div>
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="address3" id="address3" value="{{ user.address3|capitalize }}">
+                    </div>
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="town_city" id="town_city" value="{{ user.town_city|capitalize }}" required>
+                    </div>
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="county" id="county" value="{{ user.county|capitalize }}" required>
+                    </div>
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="postcode" id="postcode" value="{{ user.postcode|capitalize }}" required>
+                    </div>
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="phone" id="phone" value="{{ user.phone|capitalize }}">
+                    </div>
+                    <div class="col-md-12 form-group mt-1">
+                        <input type="text" class="form-control" name="business_email" id="business_email" value="{{ user.business_email|capitalize }}">
+                    </div>
+                    <div class="col-md-12 form-group mt-4">
+                        <label for="description">Tell us about yourself and what you can offer (5 to 200 characters)</label>
+                        <textarea id="description" style="width:100%;height:150px;" name="description" minlength="5" 
+                        maxlength="500">{{ user.description|capitalize }}</textarea>
+                    </div>
+                </div>
+                <div class="mt-4 d-flex flex-row">
+                    <div class="me-1">
+                        <a type="button" href="{{ url_for('profile') }}" class="btn btn-primary">Back</a>
+                    </div>
+                    <div class="mx-1">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</section>
+
+{% endblock %}

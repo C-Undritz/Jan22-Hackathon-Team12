@@ -1,3 +1,4 @@
+
 {%  extends 'base.html' %}
 
 {% block title %}
@@ -19,38 +20,34 @@
                     </div>
                 </div>
             </div>
-            <div class="col mb-5">
-                <div class="card h-100 shadow-sm"> <img src="{{ url_for('static', filename='img/shelter.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="clearfix mb-3 text-center"> Shelter Name </div>
-                        <h5 class="card-title text-center">Lorem, ipsum </h5>
-                        <div class="text-center my-4"> <a href="#" class="btn btn-warning">See Pets</a> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-5">
-                <div class="card h-100 shadow-sm"> <img src="{{ url_for('static', filename='img/shelter.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="clearfix mb-3 text-center"> Shelter Name </div>
-                        <h5 class="card-title text-center">Lorem, ipsum </h5>
-                        <div class="text-center my-4"> <a href="#" class="btn btn-warning">See Pets</a> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-5">
-                <div class="card h-100 shadow-sm"> <img src="{{ url_for('static', filename='img/shelter.jpg') }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <div class="clearfix mb-3 text-center"> Shelter Name </div>
-                        <h5 class="card-title text-center">Lorem, ipsum </h5>
-                        <div class="text-center my-4"> <a href="#" class="btn btn-warning">See Pets</a> </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-        </div>
+         </div>
     </div>
     
 </section>
 <!--/ End section -->
+
+{% extends "base.html" %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+
+<body>
+  <h2>These are the providers:</h2>
+  {% for provider in providers %}
+    {% if provider.provider == true %}
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ provider.provider_name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ provider.business_email }}</h6>
+          <p class="card-text">{{ provider.description }}</p>
+          <a href="{{ url_for('provider_details', provider_name=provider.provider_name) }}" class="card-link">Details</a>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</body>
+
 {% endblock %}
