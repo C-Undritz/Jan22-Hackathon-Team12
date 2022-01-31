@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block content %}
-<section id="signup" class="signup">
-    <div class="container" data-aos="fade-up">
+<section id="signup" class="hero position-relative jumbotron jumbotron-fluid bg-white py-3 mb-0 signup">
+    <div class="container hero-inner" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Sign Up</h2>
+            <h2 class="text-center mt-2">Sign Up</h2>
         </div>
     </div>
 
@@ -28,31 +28,31 @@
                     </div>
 
                     <!-- Last Name -->
-                    <div class="col-md-12 form-group mt-1">
+                    <div class="col-md-12 form-group mt-2">
                         <input type="text" class="form-control" name="lname" id="lname" 
                         minlength="3" maxlength="20" placeholder="Last Name" pattern="^[a-zA-Z0-9]{5,20}$" required>
                     </div>
 
                     <!-- Username -->
-                    <div class="col-md-12 form-group mt-1">
+                    <div class="col-md-12 form-group mt-2">
                         <input type="text" class="form-control" name="username" id="username" 
                         minlength="5" maxlength="20" placeholder="Username" pattern="^[a-zA-Z0-9]{5,20}$" required>
                     </div>
 
                     <!-- Email -->
-                    <div class="col-md-12 form-group mt-1">
+                    <div class="col-md-12 form-group mt-2">
                         <input type="email" class="form-control" name="email" id="email" 
                         placeholder="Email" required>
                     </div>
 
                     <!-- Password field -->
-                    <div class="col-md-12 form-group mt-1">
+                    <div class="col-md-12 form-group mt-2">
                         <input type="password" name="password" class="form-control" id="password"
                         minlength="5" maxlength="20" placeholder="Password" pattern="^[a-zA-Z0-9]{5,20}$">
                     </div>
 
-                    <h5 class="mt-4">Become a provider!</h5>
-                    <h6>If you would like to also be a provider on this platform, in addition to the above, please fill out the below</h6>
+                    <h4 class="mt-4 text-center">Become a provider!</h4>
+                    <h5 class="text-center">If you would like to also be a provider on this platform, in addition to the above, please fill out the below</h5>
                     <!-- Provider Name -->
                     <div class="col-md-12 form-group mt-3 mt-md-0">
                         <input type="text" class="form-control" name="provider_name" id="provider_name" 
@@ -116,7 +116,7 @@
                 </div>
                 <div class="form-messages"></div>
 
-                <div class="text-center"><button type="submit">Sign Me Up</button></div>
+                <div class="text-center"><button type="submit" class="btn btn-primary mt-3">Sign Me Up</button></div>
             </form>
 
         </div>

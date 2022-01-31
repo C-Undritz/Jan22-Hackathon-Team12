@@ -1,14 +1,18 @@
 <p align="center">
-  <img src="assets/images/hackathonimg.jpg">
+  <img src="images/hackathonimg.jpg">
   <br>
  Code Insitute   <br> Mindfulness Hackathon 2022 👋
 </p>
 
 ---
 
- **<img src="assets/images/"> Life Paws <img src="assets/images/">**
+  ## **Life Paws** ## 
 
-By: Cian, ChrisU, ChrisT, Emma, Motaz,<br>January 2022<br>
+  <img src="images/resp.png"> 
+
+
+By: Cian O'Connor, Chris Undritz, ChrisT, Emma Charles Wilson and Motaz Abdou,<br>January 2022<br>
+
 This Project is an Team Event Project organized by [Code Institute](https://www.codeinstitute.net/).
 
 ## **Live site** ##
@@ -76,17 +80,25 @@ The **FEATURES** on the website will:
 
 
 ### **User Goals** ###
-- 
+- To be able to sign up.
+- To be able to adopted a pet.
+- To be able to add a pet.
 
 ​
 ### **User Stories** ###
 
 - As a **user**, I want the home screen to be simple with a clear indication of what I can do and to be able to navigate it easily.
+- As a **user**, I want to be able to become a provider and share my pet with a company.
+- As a **user**, I want to be able to choose a pet for my business.
+- As a **user**, I want to know to see information about the company.
+- As a **user**, I want to be able to get in contact with the company.
 - As a **user**, I want to see social media links in the footer.
 ​
 ### **Site Owner Goals** ###
 ​
 - As a **site owner**, I want to create an interactive website to present a clean, easy to understand display of information.
+- As a **site owner**, I want the user to be able to adopt a pet for their business.
+- As a **site owner**, I want a provider to be able to add a photo of their animal, and have their animal be eligible to go to a company that needs them.
 - As a **site owner**, I want the user to see the social media links in the footer so they know how to interact with us.
 
 
@@ -95,7 +107,9 @@ The **FEATURES** on the website will:
 
 --- 
 ## **Design Choices** ##
+
 ​
+
 ### **Fonts** ###
 ​
 We chose the []() 
@@ -185,24 +199,33 @@ We used Baslsamic Wireframe
   - The site format was designed for **smaller** device sizes such as **mobile** and **tablet** devices to give a simple, user friendly display.
 ​
 ​
-### **Interactive Elements** ###
+### **Features** ###
 ​
 - The **main features** of the site are:
-  
+
+- Responsive mobile first design using a Bootstrap framework.
+- User friendly display with lots of images
+- A Navbar with easy navigation that collapses on mobile displays
+- CTAs to encourage customers to make contact
+- A Contact Us pop-up modal with a form to submit user details and a message
+- A confirmation page after form submission allowing the user to return to the homepage.
+- Contact Us section
+- Social media links
+
   
 - **Additional Site features:**
   - A friendly HTTP 404 and 500 Error landing page for site visitors to see if a requested page is unavailable or cannot be accessed.
     - The page provides a button to click to return the     visitor to the homepage.
-- This is what the user sees if a page is not found. 
+    - This is what the user sees if a page is not found. 
 ​
-      ![404 Error](templates/assets/images/404-error.png)
-- This is what the user sees if the server is down. 
-      ![500 Error](templates/assets/images/500-error.png)
+      ![404 Error](images/404-error.png)
+    - This is what the user sees if the server is down. 
+      ![500 Error](images/500-error.png)
 ​
 ​
 ### **Future Features** ###
 ​
- - if any
+ - To be added
   
 ​
 ### **Site Construction**  ###
@@ -211,27 +234,11 @@ We used Baslsamic Wireframe
 
 - Body
   -
-    ![index-body](assets/images/screenshots/index-body.png)
+    ![index-body](images/homepage.png)
 
 - Footer
   - The footer section contains the social media links
     ![index-footer](assets/images/screenshots/index-footer.png)
-
-​
-#### other pages ####
-
-- 
-
-​
-### **Construction Table** ###
-​
-​
-| Site Page | Page Section | JavaScript File |
-| :---: | --- | :---: |
-| index.html | | script.js |
-| TBT.html |  | script.js |
-| TBT.html |  | script.js |
-​
 
 ​
 ​[Back to contents](#contents)
@@ -296,6 +303,13 @@ git push
 The following describes a typical Team Member's forked repository branch structure:
 - **Master** - this is the default branch and the source for the repository deployment.
     - **Cian_README** - this branch is used for updating the README.md and testing.md documentation only.
+
+   -  **ChrisU_backend** -this branch is used for creating and updating all backend activities.
+    -  **emma_hompage** - this branch is used for styling and working on the index.html page.
+    -  **moztan** - this branch is used for styling each page across the site so that they all look the same.
+
+
+
     
      
 ​
@@ -425,7 +439,10 @@ gh repo clone C-Undritz/Jan22-Hackathon-Team12
 - [Bootstrap](https://getbootstrap.com/)
 
 
-**​The team would like to thank [Lucy]() for her support, encouraging us along the way**
+**​The team would like to thank [Lucy]() for her support, encouraging us along the way.**
+
+**And [Code Institute](https://github.com/Code-Institute-Org) for setting up these amazing projects that allow people to come together and do what they love in a safe space.**
+
 
 --- 
 ​
