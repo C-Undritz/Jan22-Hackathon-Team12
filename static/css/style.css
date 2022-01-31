@@ -143,3 +143,50 @@ h6,
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+
+/******** SignUp ***********/
+.form-control, textarea {
+  display: block;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #7b8ab8;
+  background-color: #f0f5fa;
+  background-clip: padding-box;
+  border: 0 solid #bed1e6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  box-shadow: inset 2px 2px 8px rgb(55 94 148 / 30%), inset -3px -2px 5px rgb(255 255 255 / 80%);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/****** Provider details ********/
+.address {
+  line-height: 15px;
+}
+
+.providers-container {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #7b8ab8;
+  background-color: #f0f5fa;
+  background-clip: padding-box;
+  border: 0 solid #bed1e6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 20px;
+  box-shadow: inset 2px 2px 8px rgb(55 94 148 / 30%), inset -3px -2px 5px rgb(255 255 255 / 80%);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+body > div.wrapper.mx-auto.h-100 > section > div > div > div.col-lg-6.order-1.order-lg-2 > div > img {
+  border-radius: 20px;
+} 

@@ -11,7 +11,7 @@
     <div class="container hero-inner">
         <div class="row no-gutters align-items-center">
             <div class="col-12 col-lg-5 ml-lg-auto order-lg-2">
-                <div class="text-center hero-bg section-bg">
+                <div class="text-center hero-bg section-bg" data-aos="zoom-in" data-aos-delay="100">
                     <img src="{{ url_for('static', filename='img/kitten.png') }}" class="img-fluid hero-img" alt="Hero Image">
                 </div>
                 <!-- Empty Space -->
@@ -35,12 +35,8 @@
                         <div class="row no-gutters">
                             <div class="col-10 col-md-10 mx-auto mr-lg-auto ml-lg-0">
                                 <div class="store-btn">
-                                    <a href="#" role="button">
-                                        <button type="button" class="btn btn-lg btn-primary">Providers</button>
-                                    </a>
-                                    <a href="#" role="button">
-                                        <button type="button" class="btn btn-lg btn-primary">Pets</button>
-                                    </a>
+                                    <a href="{{ url_for('providers') }}" role="button"class="btn btn-lg btn-primary me-1">Providers</a>
+                                    <a href="#" role="button" class="btn btn-lg btn-primary ms-1">Pets</a>
                                 </div>
                             </div>
                         </div>
