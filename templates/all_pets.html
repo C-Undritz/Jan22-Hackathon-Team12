@@ -2,7 +2,7 @@
 {% block header %}
 {% endblock %}
 {% block content %}
-    <!---------------------------------------------------------->
+    <!------------------- Cat view card ------------------------>
     <section class="providers position-relative jumbotron jumbotron-fluid bg-white py-3 mb-0">
       <div class="container providers-inner">
           <div class="row no-gutters align-items-center">
@@ -11,8 +11,7 @@
                      <div class="col mb-5">
                          <div class="card h-100 shadow-sm"> <img src="{{ pet.image }}" class="card-img-top provider_pets_img" alt="...">
                              <div class="card-body">
-                                 <div class="clearfix mb-3 text-center">{{ pet.name }}</div>
-                                 <h5 class="card-title text-center">some text</h5>
+                                 <div class="card-title clearfix mb-3 text-center">{{ pet.name }}</div>
                                  <div class="text-center my-4">
                                     <a href="{{ url_for('pet_profile', pet_name=pet.name) }}" class="btn btn-primary">Details</a>
                                  </div>
