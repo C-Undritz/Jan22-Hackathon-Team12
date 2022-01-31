@@ -138,6 +138,12 @@ body {
   flex: 1 0 auto;
 }
 
+/* fix buttons */
+
+.bottom-space {
+  margin-bottom: 10px;
+}
+
 /******** Service Providers *********/
 
 .providers {
