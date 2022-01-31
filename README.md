@@ -42,9 +42,6 @@ This Project is an Team Event Project organized by [Code Institute](https://www.
   - [**Interactive Elements**](#interactive-elements)
   - [**Future Features**](#future-features)
   - [**Site Construction**](#site-construction)
-  - [**Page Layout**](#page-layout)
-    - [**INDEX.HTML**](#indexhtml)
-    - 
 - [**Project Management**](#project-management)
 - [**Version Control**](#version-control)
     - [**Gitpod Workspaces**](#gitpod-workspaces)
@@ -151,9 +148,13 @@ We used Baslsamic Wireframe
 ​
 ### **Libraries** ###
 ​
-- 
-​
-​
+- Bootstrap
+Used to design a mobile-first responsive website layout.
+- jQuery
+Loaded as part of the Bootstrap CDN starter template
+- Popper
+Loaded as part of the Bootstrap CDN starter template
+
 ​
 ### **Tools** ###
 ​
