@@ -5,7 +5,7 @@ body,
 .font-family-primary {
   font-family: 'Chewy', sans-serif;
   line-height: 1.5;
-  letter-spacing: 0.85px;
+  letter-spacing: 1.2px;
 }
 a,
 a:hover,
@@ -125,6 +125,23 @@ h6,
 
 .home-content {
   padding: 20px;
+}
+
+/* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+/* fix buttons */
+
+.bottom-space {
+  margin-bottom: 10px;
 }
 
 /******** Service Providers *********/
