@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;500&family=Quicksand:wght@300;500;600;700&family=Zen+Kurenaido&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Nova+Mono&family=Zeyada&display=swap');
 
 body,
 .font-family-primary {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Chewy', sans-serif;
   line-height: 1.5;
   letter-spacing: 0.85px;
 }
@@ -26,13 +27,17 @@ header nav {
 }
 
 .nav-link {
-  color: #06006A !important;
-  font-family: dosis, sans-serif !important;
+  color: #000 !important;
+  font-family: Chewy, sans-serif !important;
   font-weight: bold !important;
+  font-size: larger;
+  transition: all 0.3s ease 0s;
+
 }
 
 .nav-link:hover {
-  color: #228BE6 !important;
+  color: #06006A !important;
+  transition: 0s 2;
 }
 
 .navbar-brand {

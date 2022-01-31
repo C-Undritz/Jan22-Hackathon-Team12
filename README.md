@@ -67,14 +67,12 @@ This Project is an Team Event Project organized by [Code Institute](https://www.
 ---
 ## **UX (User Experience)** ##
 
+**FEATURES** 
+
 ### **Project Goals** ###
-- 
-​
+- The goal of this project is to create a site for companies where their employees can find a pet of their choosing, to bring into the office in order to encourage good mental health in the workplace. 
 
-The **FEATURES** on the website will:
-
-- 
-​
+- In addition, we would hope that our service would bring more people in the workplace together by virtue of the animals, get them talking, finding a common interest and thereby making the team not only happier but stronger.
 
 
 
@@ -115,16 +113,15 @@ The **FEATURES** on the website will:
 We chose the []() 
 ​
 ### **Colours** ###
-​
 
 ​
+![Colour palette](images/color.png)
 ​
-​
-![Colour palette](assets/images/coolors-palette-sm.png)
-​
-- *Rich Black FOGRA 39* (#00000) - Black example for now
-
-
+- *Seductive Yellow* (#F1B300)
+- *Deep Champange* (#FBD690)
+- *Absolute Zero* (#124CC3)
+- *Navy Blue* (#06006A)
+- *Cultured* (#F3F5F6)
 
 These colours will compliment each other well and provide the user with a distinct, pleasant colour scheme to help ease stress. 
 
@@ -232,13 +229,38 @@ We used Baslsamic Wireframe
 ​
 ​ These will be screen shots of final product
 
-- Body
+- Landing page
+ - where the user can scroll down and see what the site is about and sign up if they're interested.
   -
     ![index-body](images/homepage.png)
+    - Mobile homepage view
+
+    - -![index-body](images/mobile-home.png)
+- Login page
+  - Where the user can sign up to the site or log back in if already a memeber.
+-![index-body](images/login.png)
+
+- Profile page
+  - where the user can see their proifle information and change it details if they like.
+    - ![index-body](images/user_profile.png)
+
+- Pet Details page
+  - where the user can see their proifle information and change it details if they like.
+    - ![index-body](images/pet_details.png)
+
+- Provider Details page
+  - where the user can see and read information about the person or people providing the service.
+    - ![index-body](images/provider_details2.png)
+
+
+- Our Service Providers page
+  - where the user can see and read information about vaious providers and their the service.
+    - ![index-body](images/list.png)
+    
 
 - Footer
-  - The footer section contains the social media links
-    ![index-footer](assets/images/screenshots/index-footer.png)
+  - The footer section in a real world sitution would contain the social media links, but for the purpose of this project, comtains our team.
+    ![index-footer](images/footer.png))
 
 ​
 ​[Back to contents](#contents)
