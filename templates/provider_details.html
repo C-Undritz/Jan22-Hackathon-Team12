@@ -6,26 +6,39 @@
            
 {% block content %}
 
-  <body>
-    <h2>These are the selected provider details:</h2>
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-        <h5 class="card-title">{{ provider.provider_name }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ provider.description}}</h6>
-        <p class="card-text">{{ provider.address1 }}</p>
-        <p class="card-text">{{ provider.address2 }}</p>
-        {% if provider.address3 %}
-            <p class="card-text">{{ provider.address3 }}</p>
-        {% endif %}
-        <p class="card-text">{{ provider.town_city }}</p>
-        <p class="card-text">{{ provider.county }}</p>
-        <p class="card-text">{{ provider.postcode}}</p>
-        <br>
-        <p class="card-text">{{ provider.phone}}</p>
-        <p class="card-text">{{ provider.business_email }}</p>
-        <a href="{{ url_for('provider_pets', provider_name=provider.provider_name) }}" class="card-link">Pets</a>
-        </div>
+<section class="hero position-relative jumbotron jumbotron-fluid bg-white py-3 mb-0">
+    <div class="container">
+      <h1 class="text-center heading mt-3 mb-3">Provider Details</h1>
+      <div class="row providers-container mb-5">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+          <div class="about-img my-auto">
+              {% if provider.provider_image %}
+              <img src="{{ provider.provider_image }}" class="img-fluid" alt="">
+              {% else %}
+              <img src="{{ url_for('static', filename='img/kitten.png') }}" class="img-fluid" alt="">
+              {% endif %}
+          </div>
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content my-auto">
+          <h2 class="heading">{{ provider.provider_name }}</h2>
+          <p>
+            {{ provider.description }}
+          </p><br>
+          <p><i class="fas fa-map-marker-alt"></i> Address:</p>
+          <p class="address">{{ provider.address1 }}</p>
+          <p class="address">{{ provider.address2 }}</p>
+          {% if provider.address3 %}
+              <p class="address">{{ provider.address3 }}</p>
+          {% endif %}
+          <p class="address">{{ provider.town_city }}</p>
+          <p class="address">{{ provider.county }}</p>
+          <p class="address">{{ provider.postcode}}</p>
+          <br>
+          <p><i class="fas fa-phone"></i> Tel: {{ provider.phone}}</p>
+          <p><i class="fas fa-envelope"></i> E-mail: {{ provider.business_email }}</p>
+          <a href="{{ url_for('provider_pets', provider_name=provider.provider_name) }}" class="btn btn-primary mx-auto">View Pets</a>
+      </div>
+      </div>
     </div>
-  </body>
-
+  </section>
 {% endblock %}

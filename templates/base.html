@@ -1,21 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life Paws {% block title %}{% endblock %}</title>
+    <meta name="description" content="Hiring pets in work place">
+    <meta name="keywords" content="Cats, dogs, pets, animals, mental health, wellbeing, work buddy, friend">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,500,700" crossorigin="anonymous">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Default CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/default.css') }}">
+
+    <!-- Color CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/color.css') }}">
+
+    <!-- Font CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fonts.css') }}">
+
+    <!-- Button CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/buttons.css') }}">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
     <!-- link to favicon -->
     <link rel="icon" type="image/png" href=" /static/images/paw.png" />
+</head>
 
-<body>
 
-    <!-- Navbar-->
+<body class="text-black base-font-size">
+
+    <div class="wrapper mx-auto h-100">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-inner">
+                <!-- Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Life Paws</a>
+          <a class="navbar-brand" href="{{ url_for('home') }}"><i class="fas fa-paw"></i> Life Paws</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -26,10 +61,10 @@
               </li>
               {% if session.user %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
                 </li>
               {% else %}
                 <li class="nav-item">
@@ -45,26 +80,89 @@
         </div>
       </nav>
     <!-- End Navbar-->
-
-    
-    {% block content %}
-    {% endblock %}
-
-    <!-- Footer -->
-    <div class="container">
-        <footer class="py-3 my-4">
-          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Facebook</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Service Providers</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Whatever</a></li>
-          </ul>
-          <p class="text-center text-muted">© Copyright 2022 Life Paws</p>
+            </div>
+        </header>
+        <!-- End Header -->
+        
+        <!-- Hero -->
+        
+            {% block content %}
+            {% endblock %}
+        
+        <!-- End Hero -->
+        
+      
+        
+        <!-- Footer -->
+        <footer class="footer py-4 bg-white">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <div class="row">
+                            
+                            <div class="col-12 mx-auto col-lg-12">
+                                <div class="row text-center">
+                                    <ul class="nav col flex-column sm-font-size">
+                                        <li class="nav-link nav-head text-uppercase font-weight__500 text-black base-font-size font-family-secondary">Motaz Abdou</li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fab fa-github fa-3x"></i></a></li>
+                                    </ul>
+                                    <ul class="nav col flex-column sm-font-size">
+                                        <li class="nav-link nav-head text-uppercase font-weight__500 text-black base-font-size font-family-secondary">Cian O'Conor</li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fab fa-github fa-3x"></i></a></li>
+                                    </ul>
+                                    <ul class="nav col flex-column sm-font-size">
+                                        <li class="nav-link nav-head text-uppercase font-weight__500 text-black base-font-size font-family-secondary">Emma Charles Wilson</li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fab fa-github fa-3x"></i></a></li>
+                                    </ul>
+                                    <ul class="nav col flex-column sm-font-size">
+                                        <li class="nav-link nav-head text-uppercase font-weight__500 text-black base-font-size font-family-secondary">Chris Undritz</li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fab fa-github fa-3x"></i></a></li>
+                                    </ul>
+                                    <ul class="nav col flex-column sm-font-size">
+                                        <li class="nav-link nav-head text-uppercase font-weight__500 text-black base-font-size font-family-secondary">Chris T</li>
+                                        <li class="nav-item"><a href="#" class="nav-link text-gray"><i class="fab fa-github fa-3x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Empty Space -->
+                        <div class="sm-space"></div>
+                        <!--/ End Empty Space -->
+                        <div class="border-top border-color-light-gray"></div>
+                        <!-- Empty Space -->
+                        <div class="sm-space"></div>
+                        <!--/ End Empty Space -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="copyright xs-font-size text-center text-gray">
+                                    © 2022. All Rights Reserved. Code Institute Hackathon - Team 12
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
-      </div>
-    <!-- End Footer -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!--/ End Footer -->
+    </div>
+
+    <!-- AOS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script> AOS.init(); </script>
+
+    <!-- jQuery Script -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+    <!-- Popper Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- Main Script -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
+
 </html>

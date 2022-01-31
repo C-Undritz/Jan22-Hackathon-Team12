@@ -44,6 +44,13 @@ def home():
     return render_template("index.html", pets=pets)
 
 
+@app.route("/all_pets")
+def all_pets():
+    """------------- Search All Recipes page -----------------------"""
+    pets = list(mongo.db.pets.find())
+    return render_template("all_pets.html", pets=pets)
+    
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """------------- Log in -----------------------"""
@@ -72,36 +79,6 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
-
-
-@app.route("/provider_login", methods=["GET", "POST"])
-def provider_login():
-    """------------- Log in -----------------------"""
-    if request.method == "POST":
-        # check if the username already exists in the database
-        existing_user = mongo.db.service_providers.find_one(
-            {"name": request.form.get("name").lower()}
-        )
-
-        if existing_user:
-            # check to see if hashed password matches user input
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")
-            ):
-                session["user"] = request.form.get("name").lower()
-                flash("Welcome {}".format(request.form.get("name")))
-                return redirect(url_for("home", username=session["user"]))
-            else:
-                # Invalid password match
-                flash("Invalid Username and/or Password")
-                return redirect(url_for("provider_login"))
-
-        else:
-            # Username does not exist
-            flash("Incorrect Username and/or Password")
-            return redirect(url_for("provider_login"))
-
-    return render_template("provider_login.html")
 
 
 @app.route("/logout")
@@ -173,9 +150,9 @@ def profile():
     """
     if session["user"]:
         user = find_user()
-        provider = user['provider']
+        # provider = user['provider']
 
-        return render_template("profile.html", user=user, provider=provider)
+        return render_template("profile.html", user=user)
 
     return redirect(url_for("login"))
 
@@ -194,6 +171,7 @@ def provider_profile():
         email = user['email']
         username = user['username']
         password = user['password']
+        provider = user['provider']
         if (user['provider_name'] == request.form.get("provider_name").lower()):
             updated_provider_name = user['provider_name']
         else:
@@ -259,7 +237,8 @@ def provider_profile():
             "postcode": updated_postcode,
             "phone": updated_phone,
             "business_email": updated_business_email,
-            "description": updated_description
+            "description": updated_description,
+            "provider": provider
         }
 
         mongo.db.users.update({"_id": ObjectId(user_id)}, profile_update)
@@ -292,6 +271,50 @@ def add_pet():
     return render_template("add_pet.html", user=user)
 
 
+@app.route("/update_pet/<pet_id>/<provider_name>", methods=["GET", "POST"])
+def update_pet(pet_id, provider_name):
+    """
+    Allows user to update their pet details. 
+    """
+    pet = mongo.db.pets.find_one({"_id": ObjectId(pet_id)})
+    print(pet)
+    print(provider_name)
+    print("hello")
+
+    if request.method == "POST":
+        print("trying to update")
+        updated_provider = provider_name
+        if (pet["name"] == request.form.get("name").lower()):
+            updated_name = pet['name']
+        else:
+            updated_name = request.form.get("name").lower()
+
+        if (pet["description"] == request.form.get("description").lower()):
+            updated_description = pet['description']
+        else:
+            updated_description = request.form.get("description").lower()
+
+        if (pet["image"] == request.form.get("image")):
+            updated_image = pet['image']
+        else:
+            updated_image = request.form.get("image")
+
+        profile_update = {
+            "name": updated_name,
+            "description": updated_description,
+            "image": updated_image,
+            "provider": updated_provider
+        }
+
+        mongo.db.pets.update_one({"_id": ObjectId(pet_id)}, profile_update)
+        flash("Pet profile updated")
+        # return redirect(url_for("provider_view_pets", provider_name=provider_name))
+        return redirect(url_for("home"))
+
+
+    return render_template("update_pet.html", pet=pet)
+
+
 @app.route("/providers")
 def providers():
     providers = mongo.db.users.find()
@@ -310,10 +333,28 @@ def provider_pets(provider_name):
     return render_template("provider_pets.html", pets=pets)
 
 
+@app.route("/provider_view_pets/<provider_name>")
+def provider_view_pets(provider_name):
+    pets = list(mongo.db.pets.find({"provider": provider_name}))
+    return render_template("provider_view_pets.html", pets=pets)
+
+
 @app.route("/pet_profile/<pet_name>")
 def pet_profile(pet_name):
     pet = mongo.db.pets.find_one({"name": pet_name})
     return render_template("pet_profile.html", pet=pet)
+
+
+@app.route("/delete_pet/<pet_id>/<provider_name>", methods=["GET", "POST"])
+def delete_pet(pet_id, provider_name):
+    """
+    Queries the database and deletes the selected pet.
+    """
+    if request.method == "POST":
+        mongo.db.pets.remove({"_id": ObjectId(pet_id)})
+        flash("Pet deleted from database")
+        print("pet deleted")
+        return redirect(url_for("provider_view_pets", provider_name=provider_name))
 
 
 @app.errorhandler(404)
