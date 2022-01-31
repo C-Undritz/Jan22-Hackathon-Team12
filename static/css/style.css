@@ -127,6 +127,17 @@ h6,
   padding: 20px;
 }
 
+/* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
 /******** Service Providers *********/
 
 .providers {
