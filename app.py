@@ -44,6 +44,13 @@ def home():
     return render_template("index.html", pets=pets)
 
 
+@app.route("/all_pets")
+def all_pets():
+    """------------- Search All Recipes page -----------------------"""
+    pets = list(mongo.db.pets.find())
+    return render_template("all_pets.html", pets=pets)
+    
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """------------- Log in -----------------------"""
